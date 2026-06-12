@@ -419,7 +419,7 @@ function Npc(id, definition) {
   this.y = definition.y;
   this.name = definition.name;
   this.sprite = null;
-  this.interactionRange = 2;
+  this.interactionRange = 3;
 
   this.isPlayerInRange = function(player) {
     if (!player) return false;

@@ -282,6 +282,7 @@ const Game = {
     }
 
     this.checkItemPickups();
+    this.checkNpcProximity();
     this.updateHUD();
   },
 
@@ -446,6 +447,29 @@ const Game = {
   connectToServer: function(serverUrl) {
     this.state = "connecting";
     Network.connect(serverUrl);
+  },
+
+  checkNpcProximity: function() {
+    if (!this.player || !this.player.isAlive) return;
+    var nearNpc = null;
+    var npcKeys = Object.keys(this.npcs);
+    for (var i = 0; i < npcKeys.length; i++) {
+      var npc = this.npcs[npcKeys[i]];
+      if (npc && npc.isPlayerInRange(this.player)) {
+        nearNpc = npc;
+        break;
+      }
+    }
+    var btn = document.getElementById("npcInteract");
+    if (btn) {
+      if (nearNpc) {
+        btn.classList.remove("hidden");
+        var txt = document.getElementById("npcInteractText");
+        if (txt) txt.textContent = nearNpc.name + " - Presiona para hablar";
+      } else {
+        btn.classList.add("hidden");
+      }
+    }
   },
 
   onConnected: function() {
@@ -848,6 +872,24 @@ const Game = {
 
   handleClick: function(screenX, screenY, worldX, worldY) {
     if (this.state !== "playing" || !this.player) return;
+
+    var nKeys = Object.keys(this.npcs);
+    for (var k = 0; k < nKeys.length; k++) {
+      var npc = this.npcs[nKeys[k]];
+      if (!npc) continue;
+      var ndx = npc.x - worldX;
+      var ndy = npc.y - worldY;
+      if (Math.abs(ndx) < 1.5 && Math.abs(ndy) < 1.5) {
+        var nDef = GameData.getNpc(npc.id);
+        if (nDef && nDef.shopItemIds && nDef.shopItemIds.length > 0) {
+          this.openShop(nDef);
+        } else {
+          this.addChatMessage(npc.name + ": Hola, " + this.player.name + "!", "system");
+        }
+        return;
+      }
+    }
+
     var mKeys = Object.keys(this.monsters);
     for (var i = 0; i < mKeys.length; i++) {
       var m = this.monsters[mKeys[i]];
@@ -855,7 +897,6 @@ const Game = {
       var dx = m.x - worldX;
       var dy = m.y - worldY;
       if (Math.abs(dx) < 1.5 && Math.abs(dy) < 1.5) {
-        var skillId = this.player.skillBar[0] || "normal_attack";
         this.useSkill(0);
         return;
       }
@@ -1161,9 +1202,8 @@ const Game = {
   },
 
   onGameMessage: function(data) {
-    var msg = data.message || "";
-    var type = data.type || "system";
-    this.addChatMessage(msg, type);
+    var msg = data.message || data.text || "";
+    this.addChatMessage(msg, "system");
   },
 
   onError: function(data) {
