@@ -155,6 +155,9 @@ const Input = {
     var text = input.value.trim();
     if (text.length > 0) {
       Network.send("CHAT", { message: text });
+      if (typeof Game !== "undefined" && Game.addChatMessage) {
+        Game.addChatMessage("Tú: " + text, "player");
+      }
       input.value = "";
     }
   },
@@ -238,6 +241,10 @@ const Input = {
   },
 
   handleKeyDown: function(e) {
+    var chatInput = document.getElementById("chatInput");
+    if (chatInput && document.activeElement === chatInput) {
+      return;
+    }
     if (e.key >= "1" && e.key <= "6") {
       var idx = parseInt(e.key) - 1;
       if (typeof Game !== "undefined" && Game.player && Game.state === "playing") {

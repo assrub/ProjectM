@@ -476,12 +476,12 @@ input, textarea, button {
 /* Chat Box */
 .chat-box {
   position: fixed;
-  bottom: 170px;
-  left: 12px;
+  bottom: 110px;
+  right: 12px;
   z-index: 15;
-  width: 220px;
-  max-height: 150px;
-  background: rgba(0,0,0,0.65);
+  width: 240px;
+  max-height: 180px;
+  background: rgba(0,0,0,0.75);
   border-radius: 8px;
   overflow: hidden;
   display: flex;
@@ -859,6 +859,42 @@ input, textarea, button {
 @keyframes npcBounce {
   0%, 100% { transform: translateX(-50%) translateY(0); }
   50% { transform: translateX(-50%) translateY(-6px); }
+}
+
+/* Death Overlay */
+.death-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: 50;
+  background: rgba(180, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.death-content {
+  text-align: center;
+  animation: deathPulse 1s ease-in-out infinite;
+}
+
+@keyframes deathPulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.05); opacity: 0.8; }
+}
+
+.death-title {
+  font-size: 48px;
+  font-weight: 900;
+  color: #ff1744;
+  text-shadow: 0 0 30px rgba(255, 23, 68, 0.8);
+  letter-spacing: 6px;
+}
+
+.death-subtitle {
+  font-size: 18px;
+  color: #ff8a80;
+  margin-top: 12px;
 }
 
 /* Scrollbar */

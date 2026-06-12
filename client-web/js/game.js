@@ -168,6 +168,33 @@ const Game = {
   fixedUpdate: function(dt) {
     if (this.state !== "playing" || !this.player) return;
 
+    if (!this.player.isAlive) {
+      this.player.deathTimer = (this.player.deathTimer || 0) + dt;
+      if (this.player.deathTimer < 3) {
+        if (!this.player._deathShown) {
+          this.player._deathShown = true;
+          this.showDeathOverlay();
+          this.addChatMessage("Has muerto! Renacerás en 3 segundos...", "system");
+        }
+      } else {
+        var classDef = GameData.getClass(this.player.className);
+        if (classDef) {
+          this.player.hp = this.player.maxHp;
+          this.player.mp = this.player.maxMp;
+          this.player.x = classDef.startingX;
+          this.player.y = classDef.startingY;
+          this.player.targetX = classDef.startingX;
+          this.player.targetY = classDef.startingY;
+          this.player.isAlive = true;
+          this.player.deathTimer = 0;
+          this.player._deathShown = false;
+          this.hideDeathOverlay();
+          this.addChatMessage("Has renacido!", "system");
+        }
+      }
+      return;
+    }
+
     var joyDir = Input.getJoystickDirection();
     var kbDir = Input.getKeyboardDirection();
     var moveX = joyDir.x !== 0 ? joyDir.x : kbDir.x;
@@ -236,10 +263,6 @@ const Game = {
         if (atkResult && atkResult.damage > 0 && this.player) {
           this.player.takeDamage(atkResult.damage);
           Renderer.addDamagePopup(this.player.x, this.player.y - 0.5, atkResult.damage, false);
-          if (!this.player.isAlive) {
-            this.state = "dead";
-            this.addChatMessage("Has muerto!", "system");
-          }
         }
       }
     }
@@ -558,6 +581,32 @@ const Game = {
 
     var mapName = document.getElementById("minimapName");
     if (mapName) mapName.textContent = mapDef.name || mapId;
+  },
+
+  showDeathOverlay: function() {
+    var overlay = document.getElementById("deathOverlay");
+    if (overlay) overlay.classList.remove("hidden");
+    var timer = document.getElementById("deathTimer");
+    if (timer) timer.textContent = "3";
+    var self = this;
+    if (this._deathCountdown) clearInterval(this._deathCountdown);
+    this._deathCountdown = setInterval(function() {
+      var el = document.getElementById("deathTimer");
+      if (el) {
+        var val = parseInt(el.textContent) - 1;
+        if (val <= 0) { clearInterval(self._deathCountdown); return; }
+        el.textContent = val;
+      }
+    }, 1000);
+  },
+
+  hideDeathOverlay: function() {
+    var overlay = document.getElementById("deathOverlay");
+    if (overlay) overlay.classList.add("hidden");
+    if (this._deathCountdown) {
+      clearInterval(this._deathCountdown);
+      this._deathCountdown = null;
+    }
   },
 
   useSkill: function(slotIndex) {
