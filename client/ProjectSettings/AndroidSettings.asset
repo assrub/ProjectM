@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!159 &1
+AndroidSettings:
+  m_AndroidMinSdkVersion: 26
+  m_AndroidTargetSdkVersion: 33
+  m_AndroidGamepadSupport: 0
+  m_AndroidTVCompatibility: 0
+  m_AndroidARCoreEnabled: 0
+  m_AndroidSplashScreenEnabled: 0
+  m_AndroidAutoRotationEnabled: 1
+  m_AndroidPreferLandscape: 1
+  m_AndroidAPKExpansionFilesEnabled: 0
+  m_AndroidShowBootLogo: 0
+  m_AndroidUse64Bit: 1
+  m_AndroidTargetArchitecture: 4

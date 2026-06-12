@@ -1,0 +1,79 @@
+[
+  {
+    "id": "dark_knight",
+    "name": "Dark Knight",
+    "baseStats": {
+      "str": 28,
+      "agi": 20,
+      "vit": 25,
+      "ene": 10
+    },
+    "pointsPerLevel": 5,
+    "hpPerLevel": 12,
+    "mpPerLevel": 4,
+    "skills": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      21,
+      22,
+      29
+    ]
+  },
+  {
+    "id": "elf",
+    "name": "Elf",
+    "baseStats": {
+      "str": 22,
+      "agi": 28,
+      "vit": 20,
+      "ene": 13
+    },
+    "pointsPerLevel": 5,
+    "hpPerLevel": 8,
+    "mpPerLevel": 6,
+    "skills": [
+      1,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      23,
+      24,
+      28,
+      30
+    ]
+  },
+  {
+    "id": "mago",
+    "name": "Mago",
+    "baseStats": {
+      "str": 18,
+      "agi": 18,
+      "vit": 15,
+      "ene": 32
+    },
+    "pointsPerLevel": 5,
+    "hpPerLevel": 6,
+    "mpPerLevel": 10,
+    "skills": [
+      1,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      25,
+      26,
+      27
+    ]
+  }
+]

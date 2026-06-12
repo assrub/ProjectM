@@ -1,0 +1,525 @@
+[
+  {
+    "id": 1,
+    "name": "Lorencia",
+    "width": 80,
+    "height": 80,
+    "spawnPoints": [
+      {
+        "monsterDefId": 1,
+        "x": 20,
+        "y": 20,
+        "count": 5
+      },
+      {
+        "monsterDefId": 2,
+        "x": 30,
+        "y": 25,
+        "count": 4
+      },
+      {
+        "monsterDefId": 16,
+        "x": 15,
+        "y": 15,
+        "count": 3
+      },
+      {
+        "monsterDefId": 25,
+        "x": 25,
+        "y": 30,
+        "count": 3
+      },
+      {
+        "monsterDefId": 30,
+        "x": 35,
+        "y": 20,
+        "count": 2
+      }
+    ],
+    "npcs": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      8
+    ],
+    "connections": [
+      {
+        "mapId": 2,
+        "x": 79,
+        "y": 40
+      },
+      {
+        "mapId": 3,
+        "x": 40,
+        "y": 79
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Davias",
+    "width": 80,
+    "height": 80,
+    "spawnPoints": [
+      {
+        "monsterDefId": 3,
+        "x": 20,
+        "y": 20,
+        "count": 5
+      },
+      {
+        "monsterDefId": 4,
+        "x": 30,
+        "y": 30,
+        "count": 4
+      },
+      {
+        "monsterDefId": 30,
+        "x": 40,
+        "y": 25,
+        "count": 3
+      },
+      {
+        "monsterDefId": 5,
+        "x": 25,
+        "y": 35,
+        "count": 2
+      }
+    ],
+    "npcs": [
+      7
+    ],
+    "connections": [
+      {
+        "mapId": 1,
+        "x": 0,
+        "y": 40
+      },
+      {
+        "mapId": 4,
+        "x": 79,
+        "y": 40
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Noria",
+    "width": 80,
+    "height": 80,
+    "spawnPoints": [
+      {
+        "monsterDefId": 6,
+        "x": 20,
+        "y": 20,
+        "count": 5
+      },
+      {
+        "monsterDefId": 7,
+        "x": 30,
+        "y": 30,
+        "count": 3
+      },
+      {
+        "monsterDefId": 8,
+        "x": 35,
+        "y": 25,
+        "count": 3
+      }
+    ],
+    "npcs": [
+      9
+    ],
+    "connections": [
+      {
+        "mapId": 1,
+        "x": 40,
+        "y": 0
+      },
+      {
+        "mapId": 5,
+        "x": 79,
+        "y": 40
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Dungeon",
+    "width": 60,
+    "height": 60,
+    "spawnPoints": [
+      {
+        "monsterDefId": 9,
+        "x": 15,
+        "y": 15,
+        "count": 6
+      },
+      {
+        "monsterDefId": 17,
+        "x": 25,
+        "y": 20,
+        "count": 4
+      },
+      {
+        "monsterDefId": 18,
+        "x": 20,
+        "y": 30,
+        "count": 4
+      },
+      {
+        "monsterDefId": 10,
+        "x": 30,
+        "y": 25,
+        "count": 3
+      }
+    ],
+    "npcs": [],
+    "connections": [
+      {
+        "mapId": 2,
+        "x": 0,
+        "y": 40
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Lost Tower 1",
+    "width": 40,
+    "height": 60,
+    "spawnPoints": [
+      {
+        "monsterDefId": 11,
+        "x": 15,
+        "y": 15,
+        "count": 4
+      },
+      {
+        "monsterDefId": 19,
+        "x": 20,
+        "y": 25,
+        "count": 3
+      },
+      {
+        "monsterDefId": 12,
+        "x": 25,
+        "y": 20,
+        "count": 2
+      }
+    ],
+    "npcs": [],
+    "connections": [
+      {
+        "mapId": 3,
+        "x": 0,
+        "y": 40
+      },
+      {
+        "mapId": 6,
+        "x": 20,
+        "y": 59
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Lost Tower 2",
+    "width": 40,
+    "height": 60,
+    "spawnPoints": [
+      {
+        "monsterDefId": 13,
+        "x": 15,
+        "y": 15,
+        "count": 4
+      },
+      {
+        "monsterDefId": 20,
+        "x": 20,
+        "y": 25,
+        "count": 3
+      },
+      {
+        "monsterDefId": 21,
+        "x": 25,
+        "y": 20,
+        "count": 2
+      }
+    ],
+    "npcs": [],
+    "connections": [
+      {
+        "mapId": 5,
+        "x": 20,
+        "y": 0
+      },
+      {
+        "mapId": 7,
+        "x": 20,
+        "y": 59
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Lost Tower 3",
+    "width": 40,
+    "height": 60,
+    "spawnPoints": [
+      {
+        "monsterDefId": 22,
+        "x": 15,
+        "y": 15,
+        "count": 4
+      },
+      {
+        "monsterDefId": 14,
+        "x": 20,
+        "y": 25,
+        "count": 3
+      },
+      {
+        "monsterDefId": 23,
+        "x": 25,
+        "y": 20,
+        "count": 2
+      }
+    ],
+    "npcs": [],
+    "connections": [
+      {
+        "mapId": 8,
+        "x": 20,
+        "y": 59
+      },
+      {
+        "mapId": 6,
+        "x": 20,
+        "y": 0
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Lost Tower 4",
+    "width": 40,
+    "height": 60,
+    "spawnPoints": [
+      {
+        "monsterDefId": 15,
+        "x": 15,
+        "y": 15,
+        "count": 4
+      },
+      {
+        "monsterDefId": 24,
+        "x": 20,
+        "y": 25,
+        "count": 3
+      },
+      {
+        "monsterDefId": 26,
+        "x": 25,
+        "y": 20,
+        "count": 2
+      }
+    ],
+    "npcs": [],
+    "connections": [
+      {
+        "mapId": 7,
+        "x": 20,
+        "y": 0
+      },
+      {
+        "mapId": 9,
+        "x": 20,
+        "y": 59
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Lost Tower 5",
+    "width": 40,
+    "height": 60,
+    "spawnPoints": [
+      {
+        "monsterDefId": 27,
+        "x": 15,
+        "y": 15,
+        "count": 3
+      },
+      {
+        "monsterDefId": 28,
+        "x": 20,
+        "y": 25,
+        "count": 2
+      },
+      {
+        "monsterDefId": 29,
+        "x": 25,
+        "y": 20,
+        "count": 2
+      }
+    ],
+    "npcs": [],
+    "connections": [
+      {
+        "mapId": 8,
+        "x": 20,
+        "y": 0
+      },
+      {
+        "mapId": 10,
+        "x": 20,
+        "y": 59
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Lost Tower 6",
+    "width": 40,
+    "height": 60,
+    "spawnPoints": [
+      {
+        "monsterDefId": 31,
+        "x": 15,
+        "y": 15,
+        "count": 3
+      },
+      {
+        "monsterDefId": 32,
+        "x": 20,
+        "y": 25,
+        "count": 2
+      },
+      {
+        "monsterDefId": 33,
+        "x": 25,
+        "y": 20,
+        "count": 2
+      }
+    ],
+    "npcs": [],
+    "connections": [
+      {
+        "mapId": 9,
+        "x": 20,
+        "y": 0
+      },
+      {
+        "mapId": 11,
+        "x": 20,
+        "y": 59
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Lost Tower 7",
+    "width": 40,
+    "height": 60,
+    "spawnPoints": [
+      {
+        "monsterDefId": 34,
+        "x": 15,
+        "y": 15,
+        "count": 3
+      },
+      {
+        "monsterDefId": 35,
+        "x": 20,
+        "y": 25,
+        "count": 2
+      },
+      {
+        "monsterDefId": 36,
+        "x": 25,
+        "y": 20,
+        "count": 1
+      }
+    ],
+    "npcs": [],
+    "connections": [
+      {
+        "mapId": 10,
+        "x": 20,
+        "y": 0
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "name": "Atlans",
+    "width": 60,
+    "height": 60,
+    "spawnPoints": [
+      {
+        "monsterDefId": 8,
+        "x": 20,
+        "y": 20,
+        "count": 5
+      },
+      {
+        "monsterDefId": 17,
+        "x": 30,
+        "y": 25,
+        "count": 3
+      },
+      {
+        "monsterDefId": 31,
+        "x": 25,
+        "y": 30,
+        "count": 3
+      }
+    ],
+    "npcs": [],
+    "connections": [
+      {
+        "mapId": 2,
+        "x": 0,
+        "y": 20
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "name": "Icarus",
+    "width": 60,
+    "height": 60,
+    "spawnPoints": [
+      {
+        "monsterDefId": 33,
+        "x": 20,
+        "y": 20,
+        "count": 4
+      },
+      {
+        "monsterDefId": 35,
+        "x": 30,
+        "y": 25,
+        "count": 3
+      },
+      {
+        "monsterDefId": 36,
+        "x": 35,
+        "y": 30,
+        "count": 2
+      }
+    ],
+    "npcs": [],
+    "connections": [
+      {
+        "mapId": 3,
+        "x": 0,
+        "y": 20
+      }
+    ]
+  }
+]

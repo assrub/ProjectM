@@ -1,0 +1,170 @@
+[
+  {
+    "id": "dark_knight",
+    "name": "Dark Knight",
+    "baseStats": {
+      "str": 28,
+      "agi": 20,
+      "vit": 25,
+      "ene": 10
+    },
+    "pointsPerLevel": 5,
+    "skillsAtLevels": [
+      {
+        "level": 1,
+        "skillId": "normal_attack"
+      },
+      {
+        "level": 30,
+        "skillId": "twisting_slash"
+      },
+      {
+        "level": 80,
+        "skillId": "impale"
+      },
+      {
+        "level": 120,
+        "skillId": "swell_life"
+      },
+      {
+        "level": 160,
+        "skillId": "death_stab"
+      },
+      {
+        "level": 170,
+        "skillId": "rageful_blow"
+      },
+      {
+        "level": 220,
+        "skillId": "strike_of_destruction"
+      }
+    ],
+    "startingMap": "lorencia",
+    "startingX": 130,
+    "startingY": 140
+  },
+  {
+    "id": "elf",
+    "name": "Elf",
+    "baseStats": {
+      "str": 22,
+      "agi": 25,
+      "vit": 20,
+      "ene": 15
+    },
+    "pointsPerLevel": 5,
+    "skillsAtLevels": [
+      {
+        "level": 1,
+        "skillId": "elf_normal_attack"
+      },
+      {
+        "level": 22,
+        "skillId": "summon_goblin"
+      },
+      {
+        "level": 30,
+        "skillId": "penetration"
+      },
+      {
+        "level": 56,
+        "skillId": "heal"
+      },
+      {
+        "level": 80,
+        "skillId": "greater_damage"
+      },
+      {
+        "level": 80,
+        "skillId": "greater_defense"
+      },
+      {
+        "level": 92,
+        "skillId": "ice_arrow"
+      },
+      {
+        "level": 150,
+        "skillId": "triple_shot"
+      }
+    ],
+    "startingMap": "noria",
+    "startingX": 175,
+    "startingY": 125
+  },
+  {
+    "id": "mago",
+    "name": "Mago",
+    "baseStats": {
+      "str": 18,
+      "agi": 18,
+      "vit": 15,
+      "ene": 30
+    },
+    "pointsPerLevel": 5,
+    "skillsAtLevels": [
+      {
+        "level": 1,
+        "skillId": "fire_ball"
+      },
+      {
+        "level": 7,
+        "skillId": "power_wave"
+      },
+      {
+        "level": 13,
+        "skillId": "lightning"
+      },
+      {
+        "level": 17,
+        "skillId": "teleport"
+      },
+      {
+        "level": 21,
+        "skillId": "meteorite"
+      },
+      {
+        "level": 25,
+        "skillId": "ice"
+      },
+      {
+        "level": 30,
+        "skillId": "poison"
+      },
+      {
+        "level": 34,
+        "skillId": "flame"
+      },
+      {
+        "level": 38,
+        "skillId": "twister"
+      },
+      {
+        "level": 42,
+        "skillId": "hellfire"
+      },
+      {
+        "level": 60,
+        "skillId": "aqua_beam"
+      },
+      {
+        "level": 70,
+        "skillId": "cometfall"
+      },
+      {
+        "level": 80,
+        "skillId": "inferno"
+      },
+      {
+        "level": 90,
+        "skillId": "evil_spirit"
+      },
+      {
+        "level": 220,
+        "skillId": "nova"
+      }
+    ],
+    "startingMap": "lorencia",
+    "startingX": 130,
+    "startingY": 140
+  }
+]

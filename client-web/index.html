@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="HandheldFriendly" content="true">
+  <title>Mu Online Mobile</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Loading Screen -->
+  <div id="loadingScreen" class="loading-screen">
+    <div class="spinner"></div>
+    <p class="loading-text">Conectando al servidor...</p>
+    <div class="loading-bar-container">
+      <div class="loading-bar" id="loadingBar"></div>
+    </div>
+  </div>
+
+  <!-- Main Menu -->
+  <div id="mainMenu" class="main-menu hidden">
+    <div class="menu-header">
+      <h1 class="game-title">MU Online Mobile</h1>
+      <p class="subtitle">Selecciona tu clase</p>
+    </div>
+    <div class="class-cards">
+      <div class="class-card" data-class="dark_knight">
+        <div class="class-icon dk-icon"></div>
+        <h3>Dark Knight</h3>
+        <div class="class-stats">
+          <span>Fuerza: 28</span>
+          <span>Agilidad: 20</span>
+          <span>Vitalidad: 25</span>
+          <span>Energ&iacute;a: 10</span>
+        </div>
+        <p class="class-desc">Guerrero cuerpo a cuerpo con gran fuerza y defensa.</p>
+        <button class="select-btn" data-class="dark_knight">Seleccionar</button>
+      </div>
+      <div class="class-card" data-class="elf">
+        <div class="class-icon elf-icon"></div>
+        <h3>Elf</h3>
+        <div class="class-stats">
+          <span>Fuerza: 22</span>
+          <span>Agilidad: 25</span>
+          <span>Vitalidad: 20</span>
+          <span>Energ&iacute;a: 15</span>
+        </div>
+        <p class="class-desc">Arquera con gran agilidad y habilidades de apoyo.</p>
+        <button class="select-btn" data-class="elf">Seleccionar</button>
+      </div>
+      <div class="class-card" data-class="mago">
+        <div class="class-icon mago-icon"></div>
+        <h3>Mago</h3>
+        <div class="class-stats">
+          <span>Fuerza: 18</span>
+          <span>Agilidad: 18</span>
+          <span>Vitalidad: 15</span>
+          <span>Energ&iacute;a: 30</span>
+        </div>
+        <p class="class-desc">Mago con poderosos hechizos y gran potencial m&aacute;gico.</p>
+        <button class="select-btn" data-class="mago">Seleccionar</button>
+      </div>
+    </div>
+    <div class="server-config">
+      <input type="text" id="serverIp" class="server-input" placeholder="IP del servidor..." value="localhost">
+      <button id="connectBtn" class="connect-btn">Conectar</button>
+    </div>
+  </div>
+
+  <!-- Game Canvas -->
+  <canvas id="gameCanvas"></canvas>
+
+  <!-- Game HUD -->
+  <div id="gameHud" class="game-hud hidden">
+    <div class="hud-top">
+      <div class="hud-left">
+        <span class="player-name" id="playerName">Jugador</span>
+        <span class="player-level" id="playerLevel">Nv. 1</span>
+      </div>
+      <div class="hud-gold" id="playerGold">
+        <span class="gold-icon">G</span>
+        <span id="goldAmount">0</span>
+      </div>
+    </div>
+    <div class="hud-bars">
+      <div class="bar-container hp-bar">
+        <div class="bar-fill" id="hpFill"></div>
+        <span class="bar-text" id="hpText">HP: 100/100</span>
+      </div>
+      <div class="bar-container mp-bar">
+        <div class="bar-fill" id="mpFill"></div>
+        <span class="bar-text" id="mpText">MP: 50/50</span>
+      </div>
+      <div class="bar-container xp-bar">
+        <div class="bar-fill" id="xpFill"></div>
+        <span class="bar-text" id="xpText">XP: 0/100</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Joystick Area -->
+  <div id="joystickArea" class="joystick-area hidden">
+    <div class="joystick-base" id="joystickBase">
+      <div class="joystick-thumb" id="joystickThumb"></div>
+    </div>
+  </div>
+
+  <!-- Skill Bar -->
+  <div id="skillBar" class="skill-bar hidden">
+    <div class="skill-btn" data-skill="0"></div>
+    <div class="skill-btn" data-skill="1"></div>
+    <div class="skill-btn" data-skill="2"></div>
+    <div class="skill-btn" data-skill="3"></div>
+    <div class="skill-btn" data-skill="4"></div>
+    <div class="skill-btn" data-skill="5"></div>
+  </div>
+
+  <!-- Potion Buttons -->
+  <div id="potionButtons" class="potion-buttons hidden">
+    <button class="potion-btn hp-potion-btn" id="hpPotionBtn">
+      <span class="potion-icon hp-icon">+</span>
+      <span class="potion-count" id="hpPotionCount">0</span>
+    </button>
+    <button class="potion-btn mp-potion-btn" id="mpPotionBtn">
+      <span class="potion-icon mp-icon">+</span>
+      <span class="potion-count" id="mpPotionCount">0</span>
+    </button>
+  </div>
+
+  <!-- Chat Box -->
+  <div id="chatBox" class="chat-box hidden">
+    <div class="chat-header" id="chatToggle">
+      <span>Chat</span>
+      <span class="chat-arrow">&#9650;</span>
+    </div>
+    <div class="chat-messages" id="chatMessages">
+      <p class="chat-msg system">Bienvenido a Mu Online Mobile</p>
+    </div>
+    <div class="chat-input-area">
+      <input type="text" id="chatInput" class="chat-input" placeholder="Escribe un mensaje..." maxlength="100">
+      <button class="chat-send-btn" id="chatSendBtn">Enviar</button>
+    </div>
+  </div>
+
+  <!-- Minimap -->
+  <div id="minimap" class="minimap hidden">
+    <canvas id="minimapCanvas" width="100" height="100"></canvas>
+    <span class="minimap-name" id="minimapName">Lorencia</span>
+  </div>
+
+  <!-- Inventory Panel -->
+  <div id="inventoryPanel" class="panel-overlay inventory-panel hidden">
+    <div class="panel-content">
+      <div class="panel-header">
+        <h2>Inventario</h2>
+        <button class="panel-close" id="invCloseBtn">X</button>
+      </div>
+      <div class="inv-character">
+        <div class="equip-slot weapon-slot" data-slot="weapon">Arma</div>
+        <div class="equip-slot helm-slot" data-slot="helm">Casco</div>
+        <div class="equip-slot armor-slot" data-slot="armor">Armadura</div>
+        <div class="equip-slot pants-slot" data-slot="pants">Pantalones</div>
+        <div class="equip-slot gloves-slot" data-slot="gloves">Guantes</div>
+        <div class="equip-slot boots-slot" data-slot="boots">Botas</div>
+      </div>
+      <div class="inv-grid" id="invGrid">
+        <div class="inv-slot" data-index="0"></div>
+        <div class="inv-slot" data-index="1"></div>
+        <div class="inv-slot" data-index="2"></div>
+        <div class="inv-slot" data-index="3"></div>
+        <div class="inv-slot" data-index="4"></div>
+        <div class="inv-slot" data-index="5"></div>
+        <div class="inv-slot" data-index="6"></div>
+        <div class="inv-slot" data-index="7"></div>
+        <div class="inv-slot" data-index="8"></div>
+        <div class="inv-slot" data-index="9"></div>
+        <div class="inv-slot" data-index="10"></div>
+        <div class="inv-slot" data-index="11"></div>
+        <div class="inv-slot" data-index="12"></div>
+        <div class="inv-slot" data-index="13"></div>
+        <div class="inv-slot" data-index="14"></div>
+        <div class="inv-slot" data-index="15"></div>
+      </div>
+      <div class="inv-gold-display">
+        <span>Oro: </span><span id="invGoldAmount">0</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Shop Panel -->
+  <div id="shopPanel" class="panel-overlay shop-panel hidden">
+    <div class="panel-content">
+      <div class="panel-header">
+        <h2 id="shopTitle">Tienda</h2>
+        <button class="panel-close" id="shopCloseBtn">X</button>
+      </div>
+      <div class="shop-items" id="shopItems"></div>
+      <div class="shop-gold-display">
+        <span>Oro: </span><span id="shopGoldAmount">0</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Character Panel -->
+  <div id="characterPanel" class="panel-overlay character-panel hidden">
+    <div class="panel-content">
+      <div class="panel-header">
+        <h2>Personaje</h2>
+        <button class="panel-close" id="charCloseBtn">X</button>
+      </div>
+      <div class="stats-grid" id="statsGrid">
+        <div class="stat-row"><span>Nivel:</span><span id="statLevel">1</span></div>
+        <div class="stat-row"><span>Clase:</span><span id="statClass">Dark Knight</span></div>
+        <div class="stat-row"><span>Fuerza:</span><span id="statStr">28</span></div>
+        <div class="stat-row"><span>Agilidad:</span><span id="statAgi">20</span></div>
+        <div class="stat-row"><span>Vitalidad:</span><span id="statVit">25</span></div>
+        <div class="stat-row"><span>Energ&iacute;a:</span><span id="statEne">10</span></div>
+        <div class="stat-row"><span>HP:</span><span id="statHp">100</span></div>
+        <div class="stat-row"><span>MP:</span><span id="statMp">50</span></div>
+        <div class="stat-row"><span>Ataque:</span><span id="statAtk">12</span></div>
+        <div class="stat-row"><span>Defensa:</span><span id="statDef">3</span></div>
+        <div class="stat-row"><span>Da&ntilde;o M&aacute;gico:</span><span id="statWiz">0</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Damage Popups -->
+  <div id="damagePopups" class="damage-popups"></div>
+
+  <!-- Drop Items -->
+  <div id="dropItems" class="drop-items"></div>
+
+  <!-- NPC Interaction -->
+  <div id="npcInteract" class="npc-interact hidden">
+    <p id="npcInteractText">Presiona para hablar</p>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/sprites.js"></script>
+  <script src="js/network.js"></script>
+  <script src="js/entities.js"></script>
+  <script src="js/renderer.js"></script>
+  <script src="js/combat.js"></script>
+  <script src="js/input.js"></script>
+  <script src="js/game.js"></script>
+</body>
+</html>

@@ -1,0 +1,866 @@
+[
+  {
+    "id": 1,
+    "name": "Araña",
+    "level": 2,
+    "hp": 40,
+    "atkMin": 6,
+    "atkMax": 8,
+    "def": 1,
+    "atkRate": 8,
+    "defRate": 1,
+    "xp": 5,
+    "aggroRange": 3,
+    "attackRange": 1,
+    "moveSpeed": 2,
+    "respawnTime": 15,
+    "drops": [
+      {
+        "itemDefId": 1,
+        "chance": 0.3,
+        "minLevel": 0,
+        "maxLevel": 3
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Budge Dragon",
+    "level": 4,
+    "hp": 85,
+    "atkMin": 10,
+    "atkMax": 15,
+    "def": 3,
+    "atkRate": 12,
+    "defRate": 4,
+    "xp": 12,
+    "aggroRange": 4,
+    "attackRange": 1,
+    "moveSpeed": 3,
+    "respawnTime": 15,
+    "drops": [
+      {
+        "itemDefId": 2,
+        "chance": 0.25,
+        "minLevel": 0,
+        "maxLevel": 3
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Bull Fighter",
+    "level": 6,
+    "hp": 130,
+    "atkMin": 14,
+    "atkMax": 22,
+    "def": 5,
+    "atkRate": 16,
+    "defRate": 7,
+    "xp": 22,
+    "aggroRange": 4,
+    "attackRange": 1,
+    "moveSpeed": 2,
+    "respawnTime": 18,
+    "drops": [
+      {
+        "itemDefId": 3,
+        "chance": 0.2,
+        "minLevel": 0,
+        "maxLevel": 4
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Hound",
+    "level": 8,
+    "hp": 180,
+    "atkMin": 18,
+    "atkMax": 28,
+    "def": 7,
+    "atkRate": 20,
+    "defRate": 10,
+    "xp": 35,
+    "aggroRange": 5,
+    "attackRange": 1,
+    "moveSpeed": 3,
+    "respawnTime": 18,
+    "drops": [
+      {
+        "itemDefId": 4,
+        "chance": 0.2,
+        "minLevel": 0,
+        "maxLevel": 4
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Giant",
+    "level": 10,
+    "hp": 250,
+    "atkMin": 22,
+    "atkMax": 35,
+    "def": 9,
+    "atkRate": 24,
+    "defRate": 13,
+    "xp": 50,
+    "aggroRange": 5,
+    "attackRange": 2,
+    "moveSpeed": 1,
+    "respawnTime": 20,
+    "drops": [
+      {
+        "itemDefId": 5,
+        "chance": 0.18,
+        "minLevel": 0,
+        "maxLevel": 5
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Goblin",
+    "level": 12,
+    "hp": 320,
+    "atkMin": 26,
+    "atkMax": 40,
+    "def": 11,
+    "atkRate": 28,
+    "defRate": 16,
+    "xp": 70,
+    "aggroRange": 5,
+    "attackRange": 1,
+    "moveSpeed": 2,
+    "respawnTime": 20,
+    "drops": [
+      {
+        "itemDefId": 6,
+        "chance": 0.15,
+        "minLevel": 0,
+        "maxLevel": 5
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Stone Golem",
+    "level": 15,
+    "hp": 450,
+    "atkMin": 32,
+    "atkMax": 50,
+    "def": 15,
+    "atkRate": 32,
+    "defRate": 20,
+    "xp": 110,
+    "aggroRange": 6,
+    "attackRange": 2,
+    "moveSpeed": 1,
+    "respawnTime": 25,
+    "drops": [
+      {
+        "itemDefId": 7,
+        "chance": 0.2,
+        "minLevel": 0,
+        "maxLevel": 6
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Ghost",
+    "level": 18,
+    "hp": 550,
+    "atkMin": 38,
+    "atkMax": 58,
+    "def": 18,
+    "atkRate": 36,
+    "defRate": 24,
+    "xp": 160,
+    "aggroRange": 6,
+    "attackRange": 1,
+    "moveSpeed": 2,
+    "respawnTime": 25,
+    "drops": [
+      {
+        "itemDefId": 8,
+        "chance": 0.18,
+        "minLevel": 0,
+        "maxLevel": 6
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Skeleton",
+    "level": 20,
+    "hp": 650,
+    "atkMin": 42,
+    "atkMax": 65,
+    "def": 20,
+    "atkRate": 40,
+    "defRate": 27,
+    "xp": 200,
+    "aggroRange": 6,
+    "attackRange": 1,
+    "moveSpeed": 2,
+    "respawnTime": 25,
+    "drops": [
+      {
+        "itemDefId": 9,
+        "chance": 0.15,
+        "minLevel": 0,
+        "maxLevel": 7
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Yeti",
+    "level": 23,
+    "hp": 800,
+    "atkMin": 48,
+    "atkMax": 72,
+    "def": 24,
+    "atkRate": 44,
+    "defRate": 30,
+    "xp": 260,
+    "aggroRange": 7,
+    "attackRange": 1,
+    "moveSpeed": 2,
+    "respawnTime": 28,
+    "drops": [
+      {
+        "itemDefId": 10,
+        "chance": 0.15,
+        "minLevel": 0,
+        "maxLevel": 7
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Ice Queen",
+    "level": 28,
+    "hp": 1100,
+    "atkMin": 58,
+    "atkMax": 88,
+    "def": 30,
+    "atkRate": 50,
+    "defRate": 36,
+    "xp": 380,
+    "aggroRange": 7,
+    "attackRange": 2,
+    "moveSpeed": 2,
+    "respawnTime": 30,
+    "drops": [
+      {
+        "itemDefId": 11,
+        "chance": 0.12,
+        "minLevel": 0,
+        "maxLevel": 8
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "name": "Gorgon",
+    "level": 32,
+    "hp": 1500,
+    "atkMin": 68,
+    "atkMax": 102,
+    "def": 35,
+    "atkRate": 55,
+    "defRate": 42,
+    "xp": 520,
+    "aggroRange": 7,
+    "attackRange": 2,
+    "moveSpeed": 2,
+    "respawnTime": 30,
+    "drops": [
+      {
+        "itemDefId": 12,
+        "chance": 0.1,
+        "minLevel": 0,
+        "maxLevel": 8
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "name": "Balrog",
+    "level": 36,
+    "hp": 2000,
+    "atkMin": 80,
+    "atkMax": 120,
+    "def": 40,
+    "atkRate": 60,
+    "defRate": 48,
+    "xp": 700,
+    "aggroRange": 8,
+    "attackRange": 2,
+    "moveSpeed": 3,
+    "respawnTime": 35,
+    "drops": [
+      {
+        "itemDefId": 13,
+        "chance": 0.08,
+        "minLevel": 0,
+        "maxLevel": 9
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "name": "Death Angel",
+    "level": 40,
+    "hp": 2600,
+    "atkMin": 90,
+    "atkMax": 135,
+    "def": 45,
+    "atkRate": 65,
+    "defRate": 54,
+    "xp": 900,
+    "aggroRange": 8,
+    "attackRange": 1,
+    "moveSpeed": 3,
+    "respawnTime": 35,
+    "drops": [
+      {
+        "itemDefId": 14,
+        "chance": 0.08,
+        "minLevel": 0,
+        "maxLevel": 9
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "name": "Death Knight",
+    "level": 45,
+    "hp": 3500,
+    "atkMin": 105,
+    "atkMax": 155,
+    "def": 52,
+    "atkRate": 72,
+    "defRate": 60,
+    "xp": 1200,
+    "aggroRange": 8,
+    "attackRange": 1,
+    "moveSpeed": 3,
+    "respawnTime": 30,
+    "drops": [
+      {
+        "itemDefId": 15,
+        "chance": 0.06,
+        "minLevel": 0,
+        "maxLevel": 10
+      }
+    ]
+  },
+  {
+    "id": 16,
+    "name": "Worm",
+    "level": 3,
+    "hp": 60,
+    "atkMin": 7,
+    "atkMax": 12,
+    "def": 2,
+    "atkRate": 10,
+    "defRate": 3,
+    "xp": 8,
+    "aggroRange": 2,
+    "attackRange": 1,
+    "moveSpeed": 1,
+    "respawnTime": 12,
+    "drops": [
+      {
+        "itemDefId": 1,
+        "chance": 0.35,
+        "minLevel": 0,
+        "maxLevel": 2
+      }
+    ]
+  },
+  {
+    "id": 17,
+    "name": "Shadow",
+    "level": 14,
+    "hp": 380,
+    "atkMin": 28,
+    "atkMax": 44,
+    "def": 12,
+    "atkRate": 30,
+    "defRate": 18,
+    "xp": 85,
+    "aggroRange": 6,
+    "attackRange": 1,
+    "moveSpeed": 3,
+    "respawnTime": 22,
+    "drops": [
+      {
+        "itemDefId": 7,
+        "chance": 0.18,
+        "minLevel": 0,
+        "maxLevel": 5
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "name": "Elite Goblin",
+    "level": 16,
+    "hp": 500,
+    "atkMin": 35,
+    "atkMax": 52,
+    "def": 16,
+    "atkRate": 34,
+    "defRate": 22,
+    "xp": 130,
+    "aggroRange": 6,
+    "attackRange": 1,
+    "moveSpeed": 2,
+    "respawnTime": 22,
+    "drops": [
+      {
+        "itemDefId": 8,
+        "chance": 0.15,
+        "minLevel": 0,
+        "maxLevel": 6
+      }
+    ]
+  },
+  {
+    "id": 19,
+    "name": "Elite Skeleton",
+    "level": 22,
+    "hp": 750,
+    "atkMin": 45,
+    "atkMax": 68,
+    "def": 22,
+    "atkRate": 42,
+    "defRate": 28,
+    "xp": 230,
+    "aggroRange": 7,
+    "attackRange": 1,
+    "moveSpeed": 2,
+    "respawnTime": 28,
+    "drops": [
+      {
+        "itemDefId": 10,
+        "chance": 0.12,
+        "minLevel": 0,
+        "maxLevel": 7
+      }
+    ]
+  },
+  {
+    "id": 20,
+    "name": "Mutant",
+    "level": 25,
+    "hp": 950,
+    "atkMin": 52,
+    "atkMax": 78,
+    "def": 26,
+    "atkRate": 46,
+    "defRate": 32,
+    "xp": 300,
+    "aggroRange": 7,
+    "attackRange": 2,
+    "moveSpeed": 2,
+    "respawnTime": 28,
+    "drops": [
+      {
+        "itemDefId": 11,
+        "chance": 0.1,
+        "minLevel": 0,
+        "maxLevel": 8
+      }
+    ]
+  },
+  {
+    "id": 21,
+    "name": "Elite Yeti",
+    "level": 30,
+    "hp": 1300,
+    "atkMin": 62,
+    "atkMax": 94,
+    "def": 32,
+    "atkRate": 52,
+    "defRate": 38,
+    "xp": 450,
+    "aggroRange": 7,
+    "attackRange": 1,
+    "moveSpeed": 2,
+    "respawnTime": 30,
+    "drops": [
+      {
+        "itemDefId": 12,
+        "chance": 0.1,
+        "minLevel": 0,
+        "maxLevel": 8
+      }
+    ]
+  },
+  {
+    "id": 22,
+    "name": "Cursed Wizard",
+    "level": 34,
+    "hp": 1800,
+    "atkMin": 74,
+    "atkMax": 110,
+    "def": 38,
+    "atkRate": 58,
+    "defRate": 44,
+    "xp": 620,
+    "aggroRange": 8,
+    "attackRange": 3,
+    "moveSpeed": 2,
+    "respawnTime": 32,
+    "drops": [
+      {
+        "itemDefId": 14,
+        "chance": 0.08,
+        "minLevel": 0,
+        "maxLevel": 9
+      }
+    ]
+  },
+  {
+    "id": 23,
+    "name": "Elite Golem",
+    "level": 38,
+    "hp": 2400,
+    "atkMin": 85,
+    "atkMax": 128,
+    "def": 44,
+    "atkRate": 62,
+    "defRate": 50,
+    "xp": 820,
+    "aggroRange": 8,
+    "attackRange": 2,
+    "moveSpeed": 1,
+    "respawnTime": 35,
+    "drops": [
+      {
+        "itemDefId": 15,
+        "chance": 0.06,
+        "minLevel": 0,
+        "maxLevel": 9
+      }
+    ]
+  },
+  {
+    "id": 24,
+    "name": "Devil",
+    "level": 42,
+    "hp": 3000,
+    "atkMin": 96,
+    "atkMax": 142,
+    "def": 48,
+    "atkRate": 68,
+    "defRate": 56,
+    "xp": 1050,
+    "aggroRange": 8,
+    "attackRange": 2,
+    "moveSpeed": 3,
+    "respawnTime": 35,
+    "drops": [
+      {
+        "itemDefId": 16,
+        "chance": 0.05,
+        "minLevel": 0,
+        "maxLevel": 10
+      }
+    ]
+  },
+  {
+    "id": 25,
+    "name": "Hell Hound",
+    "level": 3,
+    "hp": 55,
+    "atkMin": 7,
+    "atkMax": 11,
+    "def": 2,
+    "atkRate": 10,
+    "defRate": 3,
+    "xp": 9,
+    "aggroRange": 4,
+    "attackRange": 1,
+    "moveSpeed": 3,
+    "respawnTime": 12,
+    "drops": [
+      {
+        "itemDefId": 1,
+        "chance": 0.3,
+        "minLevel": 0,
+        "maxLevel": 2
+      }
+    ]
+  },
+  {
+    "id": 26,
+    "name": "Thunder Golem",
+    "level": 35,
+    "hp": 2200,
+    "atkMin": 78,
+    "atkMax": 118,
+    "def": 42,
+    "atkRate": 60,
+    "defRate": 46,
+    "xp": 750,
+    "aggroRange": 8,
+    "attackRange": 3,
+    "moveSpeed": 1,
+    "respawnTime": 30,
+    "drops": [
+      {
+        "itemDefId": 15,
+        "chance": 0.06,
+        "minLevel": 0,
+        "maxLevel": 9
+      }
+    ]
+  },
+  {
+    "id": 27,
+    "name": "Death Rider",
+    "level": 48,
+    "hp": 4000,
+    "atkMin": 112,
+    "atkMax": 165,
+    "def": 55,
+    "atkRate": 76,
+    "defRate": 64,
+    "xp": 1400,
+    "aggroRange": 9,
+    "attackRange": 1,
+    "moveSpeed": 3,
+    "respawnTime": 30,
+    "drops": [
+      {
+        "itemDefId": 17,
+        "chance": 0.04,
+        "minLevel": 0,
+        "maxLevel": 10
+      }
+    ]
+  },
+  {
+    "id": 28,
+    "name": "Lich",
+    "level": 50,
+    "hp": 4500,
+    "atkMin": 120,
+    "atkMax": 175,
+    "def": 58,
+    "atkRate": 80,
+    "defRate": 68,
+    "xp": 1600,
+    "aggroRange": 9,
+    "attackRange": 4,
+    "moveSpeed": 2,
+    "respawnTime": 30,
+    "drops": [
+      {
+        "itemDefId": 18,
+        "chance": 0.04,
+        "minLevel": 0,
+        "maxLevel": 10
+      }
+    ]
+  },
+  {
+    "id": 29,
+    "name": "Fire Golem",
+    "level": 44,
+    "hp": 3200,
+    "atkMin": 100,
+    "atkMax": 148,
+    "def": 50,
+    "atkRate": 70,
+    "defRate": 58,
+    "xp": 1100,
+    "aggroRange": 8,
+    "attackRange": 2,
+    "moveSpeed": 1,
+    "respawnTime": 35,
+    "drops": [
+      {
+        "itemDefId": 16,
+        "chance": 0.05,
+        "minLevel": 0,
+        "maxLevel": 10
+      }
+    ]
+  },
+  {
+    "id": 30,
+    "name": "Queen Bee",
+    "level": 7,
+    "hp": 150,
+    "atkMin": 15,
+    "atkMax": 24,
+    "def": 6,
+    "atkRate": 18,
+    "defRate": 8,
+    "xp": 28,
+    "aggroRange": 4,
+    "attackRange": 1,
+    "moveSpeed": 3,
+    "respawnTime": 16,
+    "drops": [
+      {
+        "itemDefId": 3,
+        "chance": 0.22,
+        "minLevel": 0,
+        "maxLevel": 4
+      }
+    ]
+  },
+  {
+    "id": 31,
+    "name": "Dark Elf",
+    "level": 26,
+    "hp": 1000,
+    "atkMin": 55,
+    "atkMax": 82,
+    "def": 28,
+    "atkRate": 48,
+    "defRate": 34,
+    "xp": 340,
+    "aggroRange": 7,
+    "attackRange": 2,
+    "moveSpeed": 3,
+    "respawnTime": 28,
+    "drops": [
+      {
+        "itemDefId": 11,
+        "chance": 0.1,
+        "minLevel": 0,
+        "maxLevel": 8
+      }
+    ]
+  },
+  {
+    "id": 32,
+    "name": "Ice Giant",
+    "level": 33,
+    "hp": 1700,
+    "atkMin": 72,
+    "atkMax": 108,
+    "def": 38,
+    "atkRate": 56,
+    "defRate": 42,
+    "xp": 580,
+    "aggroRange": 7,
+    "attackRange": 2,
+    "moveSpeed": 1,
+    "respawnTime": 30,
+    "drops": [
+      {
+        "itemDefId": 13,
+        "chance": 0.08,
+        "minLevel": 0,
+        "maxLevel": 9
+      }
+    ]
+  },
+  {
+    "id": 33,
+    "name": "Demon",
+    "level": 46,
+    "hp": 3800,
+    "atkMin": 108,
+    "atkMax": 160,
+    "def": 54,
+    "atkRate": 74,
+    "defRate": 62,
+    "xp": 1300,
+    "aggroRange": 9,
+    "attackRange": 2,
+    "moveSpeed": 3,
+    "respawnTime": 30,
+    "drops": [
+      {
+        "itemDefId": 17,
+        "chance": 0.04,
+        "minLevel": 0,
+        "maxLevel": 10
+      }
+    ]
+  },
+  {
+    "id": 34,
+    "name": "Dark Lord",
+    "level": 52,
+    "hp": 5000,
+    "atkMin": 130,
+    "atkMax": 190,
+    "def": 62,
+    "atkRate": 84,
+    "defRate": 72,
+    "xp": 1800,
+    "aggroRange": 9,
+    "attackRange": 2,
+    "moveSpeed": 3,
+    "respawnTime": 30,
+    "drops": [
+      {
+        "itemDefId": 18,
+        "chance": 0.03,
+        "minLevel": 0,
+        "maxLevel": 10
+      }
+    ]
+  },
+  {
+    "id": 35,
+    "name": "Phoenix",
+    "level": 55,
+    "hp": 6000,
+    "atkMin": 145,
+    "atkMax": 210,
+    "def": 68,
+    "atkRate": 88,
+    "defRate": 76,
+    "xp": 2200,
+    "aggroRange": 9,
+    "attackRange": 3,
+    "moveSpeed": 4,
+    "respawnTime": 30,
+    "drops": [
+      {
+        "itemDefId": 19,
+        "chance": 0.02,
+        "minLevel": 0,
+        "maxLevel": 10
+      }
+    ]
+  },
+  {
+    "id": 36,
+    "name": "Hydra",
+    "level": 60,
+    "hp": 8000,
+    "atkMin": 165,
+    "atkMax": 240,
+    "def": 75,
+    "atkRate": 95,
+    "defRate": 82,
+    "xp": 3000,
+    "aggroRange": 10,
+    "attackRange": 3,
+    "moveSpeed": 3,
+    "respawnTime": 30,
+    "drops": [
+      {
+        "itemDefId": 20,
+        "chance": 0.01,
+        "minLevel": 0,
+        "maxLevel": 10
+      }
+    ]
+  }
+]

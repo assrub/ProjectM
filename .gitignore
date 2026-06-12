@@ -1,0 +1,23 @@
+# Unity
+client/Library/
+client/Builds/
+client/obj/
+client/Temp/
+client/*.csproj
+client/*.sln
+
+# Unity Licensing Client
+unity-licensing-client/
+
+# .NET
+server/MuServer/bin/
+server/MuServer/obj/
+server/MuServer/*.runtimeconfig.json
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Docker
+.env
+*.tar

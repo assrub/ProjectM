@@ -1,0 +1,35 @@
+services:
+  mu-server:
+    build:
+      context: ./server
+    ports:
+      - "3000:3000"
+    environment:
+      - PORT=3000
+      - MAX_PLAYERS=50
+      - SAVE_INTERVAL=120
+    volumes:
+      - mu-data:/app/data/saves
+    restart: unless-stopped
+    networks:
+      - mu-network
+
+  mu-web:
+    image: nginx:alpine
+    ports:
+      - "8899:80"
+    volumes:
+      - ./client-web:/usr/share/nginx/html:ro
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
+    depends_on:
+      - mu-server
+    restart: unless-stopped
+    networks:
+      - mu-network
+
+networks:
+  mu-network:
+    driver: bridge
+
+volumes:
+  mu-data:

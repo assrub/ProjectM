@@ -1,0 +1,79 @@
+FROM ubuntu:22.04
+
+ENV DEBIAN_FRONTEND=noninteractive
+
+# Install dependencies
+RUN apt-get update && apt-get install -y \
+    wget \
+    xz-utils \
+    libc6 \
+    libgl1-mesa-glx \
+    libglib2.0-0 \
+    libsm6 \
+    libxrender1 \
+    libxext6 \
+    libxrandr2 \
+    libxcursor1 \
+    libxfixes3 \
+    libxi6 \
+    libxinerama1 \
+    libxxf86vm1 \
+    libpulse0 \
+    libnss3 \
+    libnspr4 \
+    libasound2 \
+    libgbm1 \
+    libxcb-cursor0 \
+    libxkbcommon0 \
+    libgdk-pixbuf2.0-0 \
+    libgtk-3-0 \
+    libwebkit2gtk-4.0-dev \
+    xvfb \
+    unzip \
+    openjdk-17-jdk \
+    && rm -rf /var/lib/apt/lists/*
+
+ENV ANDROID_SDK_ROOT=/opt/android-sdk
+ENV JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
+
+# Install Android SDK
+RUN wget -q https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip -O /tmp/cmdline-tools.zip \
+    && mkdir -p ${ANDROID_SDK_ROOT}/cmdline-tools \
+    && unzip -q /tmp/cmdline-tools.zip -d /tmp/ \
+    && mv /tmp/cmdline-tools ${ANDROID_SDK_ROOT}/cmdline-tools/latest \
+    && yes | ${ANDROID_SDK_ROOT}/cmdline-tools/latest/bin/sdkmanager --sdk_root=${ANDROID_SDK_ROOT} \
+        "platforms;android-33" \
+        "build-tools;33.0.2" \
+        "ndk;25.2.9519653" \
+    && rm -rf /tmp/*
+
+# Download and extract Unity 2022.3.20f1 Linux Editor
+RUN wget -q "https://download.unity3d.com/download_unity/61c2feb0970d/LinuxEditorInstaller/Unity-2022.3.20f1.tar.xz" -O /tmp/unity-editor.tar.xz \
+    && mkdir -p /opt/unity \
+    && tar -xf /tmp/unity-editor.tar.xz -C /opt/unity \
+    && rm /tmp/unity-editor.tar.xz
+
+# Install WebGL Support module for Unity (available for Linux)
+RUN wget -q "https://download.unity3d.com/download_unity/61c2feb0970d/LinuxEditorTargetInstaller/UnitySetup-WebGL-Support-for-Editor-2022.3.20f1.tar.xz" -O /tmp/webgl-support.tar.xz \
+    && tar -xf /tmp/webgl-support.tar.xz -C /opt/unity/Editor/Data/PlaybackEngines/ \
+    && rm /tmp/webgl-support.tar.xz
+
+# NOTE: Android APK builds run via GitHub Actions (windows-latest runner)
+# Linux Unity Editor lacks Android module installer
+
+# Configure Android SDK paths
+ENV UNITY_PATH=/opt/unity/Editor/Unity
+ENV PATH="/opt/unity/Editor:${PATH}"
+ENV ANDROID_SDK_ROOT=/opt/android-sdk
+ENV ANDROID_NDK_ROOT=/opt/android-sdk/ndk/25.2.9519653
+
+WORKDIR /app
+COPY client /app/client
+
+# Create BuildScript
+RUN mkdir -p /app/client/Assets/Scripts/Editor
+
+# Copy licensing client into image
+COPY unity-licensing-client /opt/licensing-client
+
+CMD /bin/bash -c 'export DISPLAY=:99 && Xvfb :99 -screen 0 1024x768x24 -ac & sleep 1 && echo === ACTIVATING LICENSE === && /opt/licensing-client/Unity.Licensing.Client --username "$UNITY_USERNAME" --password "$UNITY_PASSWORD" --activate-all --include-personal && /opt/licensing-client/Unity.Licensing.Client --username "$UNITY_USERNAME" --password "$UNITY_PASSWORD" --activate-ulf && echo === BUILDING WEBGL === && /opt/unity/Editor/Unity -batchmode -nographics -projectPath /app/client -buildTarget WebGL -executeMethod BuildScript.BuildWebGL -logFile /tmp/unity_build.log -quit && echo === BUILD RESULT === && grep -E "result|succeeded|failed|Error|error" /tmp/unity_build.log 2>/dev/null | head -5'
