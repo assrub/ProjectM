@@ -35,17 +35,6 @@ function Player(id, name, className, x, y) {
   this.wizRaise = 0;
 
   var classDef = GameData.getClass(className);
-  if (classDef) {
-    this.str = classDef.baseStats.str;
-    this.agi = classDef.baseStats.agi;
-    this.vit = classDef.baseStats.vit;
-    this.ene = classDef.baseStats.ene;
-    this.hp = 100 + this.vit * 2;
-    this.maxHp = this.hp;
-    this.mp = 10 + this.ene * 1.5;
-    this.maxMp = this.mp;
-    this.calculateStats();
-  }
 
   this.calculateStats = function() {
     var weapon = this.equipment.weapon || null;
@@ -87,6 +76,18 @@ function Player(id, name, className, x, y) {
     if (this.hp > this.maxHp) this.hp = this.maxHp;
     if (this.mp > this.maxMp) this.mp = this.maxMp;
   };
+
+  if (classDef) {
+    this.str = classDef.baseStats.str;
+    this.agi = classDef.baseStats.agi;
+    this.vit = classDef.baseStats.vit;
+    this.ene = classDef.baseStats.ene;
+    this.hp = 100 + this.vit * 2;
+    this.maxHp = this.hp;
+    this.mp = 10 + this.ene * 1.5;
+    this.maxMp = this.mp;
+    this.calculateStats();
+  }
 
   this.takeDamage = function(damage) {
     if (!this.isAlive) return;
