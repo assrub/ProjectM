@@ -982,13 +982,12 @@ const Game = {
             for (var key in itemDef) {
               if (itemDef.hasOwnProperty(key)) boughtItem[key] = itemDef[key];
             }
-            boughtItem.instanceId = "shop_" + Date.now() + "_" + Math.floor(Math.random() * 1000);
-            self.player.inventory.push(boughtItem);
-            self.addChatMessage("Compraste " + itemDef.name + " por " + cost + " oro", "system");
-            self.updateHUD();
-            Network.send("BUY_ITEM", { itemId: itemId, price: cost });
-            var goldSpan = document.getElementById("shopGoldAmount");
-            if (goldSpan) goldSpan.textContent = self.player.gold;
+          boughtItem.instanceId = "shop_" + Date.now() + "_" + Math.floor(Math.random() * 1000);
+          self.player.inventory.push(boughtItem);
+          self.addChatMessage("Compraste " + itemDef.name + " por " + cost + " oro", "system");
+          self.updateHUD();
+          var goldSpan = document.getElementById("shopGoldAmount");
+          if (goldSpan) goldSpan.textContent = self.player.gold;
           } else if (self.player && self.player.gold < cost) {
             self.addChatMessage("No tienes suficiente oro!", "system");
           } else {
