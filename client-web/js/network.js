@@ -1,7 +1,7 @@
 const Network = {
   ws: null,
   connected: false,
-  serverUrl: "ws://nexotec.com.ar:3000/ws",
+  serverUrl: "ws://localhost:8899/ws",
   reconnectTimer: null,
   messageHandlers: {},
 

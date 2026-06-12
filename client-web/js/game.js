@@ -19,6 +19,10 @@ const Game = {
   playerIdCounter: 0,
 
   init: function() {
+    var ipInput = document.getElementById("serverIp");
+    if (ipInput && !ipInput.value) {
+      ipInput.value = window.location.hostname || "localhost";
+    }
     Renderer.init("gameCanvas");
     Input.init();
     this.setupNetworkHandlers();
@@ -71,7 +75,7 @@ const Game = {
         var ipInput = document.getElementById("serverIp");
         var url = ipInput ? ipInput.value.trim() : "localhost";
         if (url && url.indexOf("://") === -1) {
-          url = "ws://" + url + ":3000/ws";
+          url = "ws://" + url + ":8899/ws";
         }
         self.connectToServer(url);
       });
@@ -503,7 +507,7 @@ const Game = {
     var serverInput = document.getElementById("serverIp");
     var url = serverInput ? serverInput.value.trim() : "localhost";
     if (url && url.indexOf("://") === -1) {
-      url = "ws://" + url + ":3000/ws";
+      url = "ws://" + url + ":8899/ws";
     }
 
     this.loadMap(this.currentMapId);
