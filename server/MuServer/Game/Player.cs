@@ -96,8 +96,8 @@ public class Player
         StatPoints = classData.PointsPerLevel;
 
         MapId = 1;
-        X = 100;
-        Y = 100;
+        X = 36;
+        Y = 28;
 
         RecalcStats();
     }

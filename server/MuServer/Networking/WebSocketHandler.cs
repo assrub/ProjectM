@@ -92,7 +92,7 @@ public class WebSocketHandler
             {
                 case Protocol.Login:
                     var name = root.TryGetProperty("name", out var n) ? n.GetString() ?? "" : "";
-                    var className = root.TryGetProperty("class", out var c) ? c.GetString() ?? "dk" : "";
+                    var className = root.TryGetProperty("className", out var c) ? c.GetString() ?? "dk" : "";
                     await _world.HandleLogin(connectionId, name, className);
                     break;
 

@@ -161,8 +161,8 @@ const GameData = {
         { level: 220, skillId: 'strike_of_destruction' }
       ],
       startingMap: 'lorencia',
-      startingX: 130,
-      startingY: 140
+      startingX: 36,
+      startingY: 28
     },
     elf: {
       id: 'elf',
@@ -180,8 +180,8 @@ const GameData = {
         { level: 150, skillId: 'triple_shot' }
       ],
       startingMap: 'noria',
-      startingX: 175,
-      startingY: 125
+      startingX: 36,
+      startingY: 28
     },
     mago: {
       id: 'mago',
@@ -206,8 +206,8 @@ const GameData = {
         { level: 220, skillId: 'nova' }
       ],
       startingMap: 'lorencia',
-      startingX: 130,
-      startingY: 140
+      startingX: 36,
+      startingY: 28
     }
   },
 
@@ -373,15 +373,15 @@ const GameData = {
   },
 
   npcs: {
-    hanzo: { id: 'hanzo', name: 'Hanzo', mapId: 'lorencia', x: 116, y: 141, shopItemIds: ['short_sword', 'blade', 'gladius', 'leather_armor', 'leather_helm', 'leather_pants', 'leather_gloves', 'leather_boots', 'bronze_armor', 'bronze_helm'] },
-    pasi: { id: 'pasi', name: 'Pasi', mapId: 'lorencia', x: 118, y: 113, shopItemIds: ['skull_staff', 'angelic_staff', 'pad_armor', 'bone_armor'] },
-    amy: { id: 'amy', name: 'Amy', mapId: 'lorencia', x: 127, y: 86, shopItemIds: ['small_hp_potion', 'hp_potion', 'small_mp_potion', 'mp_potion'] },
-    lumen: { id: 'lumen', name: 'Lumen', mapId: 'lorencia', x: 123, y: 135, shopItemIds: ['arrows', 'bolts'] },
-    lala: { id: 'lala', name: 'Lala', mapId: 'noria', x: 173, y: 124, shopItemIds: ['short_bow', 'bow', 'vine_armor', 'silk_armor', 'small_hp_potion', 'hp_potion', 'small_mp_potion', 'mp_potion'] },
-    gallus: { id: 'gallus', name: 'Gallus', mapId: 'noria', x: 196, y: 123, shopItemIds: ['elven_bow', 'long_bow', 'crossbow', 'arrows', 'bolts'] },
-    chaos_goblin: { id: 'chaos_goblin', name: 'Chaos Goblin', mapId: 'noria', x: 180, y: 103, shopItemIds: ['jewel_of_bless', 'jewel_of_soul', 'jewel_of_chaos'] },
-    zienna: { id: 'zienna', name: 'Zienna', mapId: 'davias', x: 186, y: 47, shopItemIds: ['falchion', 'double_axe', 'scimitar', 'scale_armor', 'brass_armor', 'plate_armor', 'serpent_staff', 'thunder_staff', 'wind_armor', 'spirit_armor'] },
-    izabel: { id: 'izabel', name: 'Izabel', mapId: 'davias', x: 225, y: 41, shopItemIds: ['large_hp_potion', 'large_mp_potion', 'hp_potion', 'mp_potion'] }
+    hanzo: { id: 'hanzo', name: 'Hanzo', mapId: 'lorencia', x: 34, y: 26, shopItemIds: ['short_sword', 'blade', 'gladius', 'leather_armor', 'leather_helm', 'leather_pants', 'leather_gloves', 'leather_boots', 'bronze_armor', 'bronze_helm'] },
+    pasi: { id: 'pasi', name: 'Pasi', mapId: 'lorencia', x: 38, y: 26, shopItemIds: ['skull_staff', 'angelic_staff', 'pad_armor', 'bone_armor'] },
+    amy: { id: 'amy', name: 'Amy', mapId: 'lorencia', x: 34, y: 30, shopItemIds: ['small_hp_potion', 'hp_potion', 'small_mp_potion', 'mp_potion'] },
+    lumen: { id: 'lumen', name: 'Lumen', mapId: 'lorencia', x: 38, y: 30, shopItemIds: ['arrows', 'bolts'] },
+    lala: { id: 'lala', name: 'Lala', mapId: 'noria', x: 34, y: 26, shopItemIds: ['short_bow', 'bow', 'vine_armor', 'silk_armor', 'small_hp_potion', 'hp_potion', 'small_mp_potion', 'mp_potion'] },
+    gallus: { id: 'gallus', name: 'Gallus', mapId: 'noria', x: 38, y: 26, shopItemIds: ['elven_bow', 'long_bow', 'crossbow', 'arrows', 'bolts'] },
+    chaos_goblin: { id: 'chaos_goblin', name: 'Chaos Goblin', mapId: 'noria', x: 36, y: 30, shopItemIds: ['jewel_of_bless', 'jewel_of_soul', 'jewel_of_chaos'] },
+    zienna: { id: 'zienna', name: 'Zienna', mapId: 'davias', x: 34, y: 26, shopItemIds: ['falchion', 'double_axe', 'scimitar', 'scale_armor', 'brass_armor', 'plate_armor', 'serpent_staff', 'thunder_staff', 'wind_armor', 'spirit_armor'] },
+    izabel: { id: 'izabel', name: 'Izabel', mapId: 'davias', x: 38, y: 26, shopItemIds: ['large_hp_potion', 'large_mp_potion', 'hp_potion', 'mp_potion'] }
   },
 
   maps: {},

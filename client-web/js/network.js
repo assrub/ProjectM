@@ -69,7 +69,7 @@ const Network = {
       console.warn("Cannot send message, not connected:", type);
       return;
     }
-    var msg = JSON.stringify({ type: type, data: data || {} });
+    var msg = JSON.stringify(Object.assign({ type: type }, data || {}));
     try {
       this.ws.send(msg);
     } catch (e) {
